@@ -20,6 +20,7 @@
         <th scope="row">#ID</th>
         <th scope="row">Name</th>
         <th scope="row">Profile Picture</th>
+        <th>PATH</th>
         <th scope="row">Update || Delete</th>
         </thead>
         <tbody>
@@ -32,8 +33,8 @@
                     your browser does not support this type of video
                 </video>-->
                <img th:src="@{__${user.img_dir}__}" height="200px" width="200px" >
-
             </td>
+            <td><a th:href="@{__${user.img_dir}__}" th:text="${user.full_path_img}" target="_blank"></a> </td>
             <td><a class="btn btn-primary" th:href="@{/updateUser/__${user.id}__}"  role="button" >Update</a> ||
                 <a class="btn btn-primary"th:href="@{/deleteUser/__${user.id}__}"  role="button" >Delete</a></td>
 

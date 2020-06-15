@@ -17,6 +17,12 @@ public class User {
 
     private String img_dir;
 
+    private  String full_path_img;
+
+    public User(String full_path_img) {
+        this.full_path_img = full_path_img;
+    }
+
     @Embedded
     private Address address;
 
@@ -67,6 +73,14 @@ public class User {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getFull_path_img() {
+        return full_path_img;
+    }
+
+    public void setFull_path_img(String full_path_img) {
+        this.full_path_img = full_path_img;
     }
 
     @Override

@@ -21,7 +21,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepo userRepo;
 
-  String upload_dir = "/home/enamul/IdeaProjects/new/upload_db_001/src/main/resources/static/img";
+  String upload_dir =  "/home/enamul/IdeaProjects/new/upload_db_001/image";
+
+        // "/home/enamul/IdeaProjects/new/upload_db_001/src/main/resources/upload";
+        //
+        // "/home/enamul/IdeaProjects/new/upload_db_001/src/main/resources/static/img";
 
 
 
@@ -43,7 +47,8 @@ public class UserServiceImpl implements UserService {
 
       imgStore(file, modifiedName);
       user.setImg(modifiedName);
-      user.setImg_dir("/img/"+modifiedName);
+      user.setFull_path_img("http://localhost:8080/image/"+modifiedName);
+      user.setImg_dir("/image/"+modifiedName);
       userRepo.save(user);
 
     }
